@@ -1,0 +1,445 @@
+/* 基础样式 */
+body, html, div, p, ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100vh;
+  font-size: 15px;
+  color: #333;
+  overflow: hidden;
+}
+body {
+  background-image: url('../image/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+p {
+  color: #333;
+  letter-spacing: .2em;
+  line-height: 2;
+}
+ul {
+  list-style: none;
+}
+a {
+  cursor: pointer;
+  color: #667d99;
+  text-decoration: none;
+}
+a:hover {
+  color: #f36322;
+}
+
+
+#page {
+  height: 400vh;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+
+section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-child(1) {
+  background: #c3c2be;
+}
+
+/* 固定logo */
+.logo {
+  position: fixed;
+  top: 30px;
+  left: 80px;
+}
+
+/* 指示器 */
+.indicator {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  width: 25px;
+  height: 132px;
+  margin-top: -66px;
+  text-align: center;
+}
+.indicator::before {
+  box-sizing: content-box;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 0;
+  border: .5px dashed rgba(37, 143, 184, 1);
+}
+.indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-bottom: 20px;
+  border: 5px solid #d6f7fb;
+  border-radius: 50%;
+  background: #667d99;
+  cursor: pointer;
+}
+.indicator .active {
+  animation: sploosh 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+}
+@keyframes sploosh {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 143, 184, 1);
+    -o-box-shadow: 0 0 0 0 rgba(37, 143, 184, 1);
+    -webkit-box-shadow: 0 0 0 0 rgba(37, 143, 184, 1);
+    -ms-box-shadow: 0 0 0 0 rgba(37, 143, 184, 1);
+    -moz-box-shadow: 0 0 0 0 rgba(37, 143, 184, 1);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(37, 143, 184, 0);
+    -o-box-shadow: 0 0 0 10px rgba(37, 143, 184, 0);
+    -webkit-box-shadow: 0 0 0 10px rgba(37, 143, 184, 0);
+    -moz-box-shadow: 0 0 0 10px rgba(37, 143, 184, 0);
+    -ms-box-shadow: 0 0 0 10px rgba(37, 143, 184, 0);
+  }
+}
+
+/* 页脚 */
+.foot {
+  position: fixed;
+  bottom: 30px;
+  right: 70px;
+  font-size: 14px;
+}
+
+/* 第一屏 */
+.page-1 {
+  width: 900px;
+  height: 24em;
+  margin: auto;
+  font-weight: 200;
+}
+.page-1 > div {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+.page-1 > div:nth-child(1) {
+  padding: 5em 0;
+}
+.page-1-indent {
+  float: left;
+  width: 70px;
+  height: 100%;
+  font-size: 3.5em;
+  color: #7c7b77;
+}
+.page-1-info p:nth-child(1){
+  height: 3.5em;
+  line-height: 3.5em;
+  font-size: 1.5em;
+  font-weight: 200;
+  letter-spacing: 1.5em;
+  margin-bottom: 1em;
+}
+.page-1-head {
+  width: 100%;
+  height: 100%;
+}
+
+/* 第二屏 */
+.page-2 {
+  width: 100%;
+  height: 80%;
+  background: #f5f5f5;
+}
+.page-2-info {
+  width: 900px;
+  height: 30em;
+  margin: auto;
+}
+.page-2-info > p {
+  margin: 30px auto;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+.page-2-info > ul {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.page-2-item {
+  width: 150px;
+  height: 150px;
+}
+.page-2-item > .icon-font {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 0 25px;
+  background: #667d99;
+  border-radius: 50%;
+  color: #fff;
+}
+.page-2-item  .icon-font::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+  font-size: 60px;
+}
+.page-2-item span:nth-child(2) {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.type {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* 第三屏 */
+.page-3 {
+  width: 100%;
+  height: 80%;
+  background: rgba(195, 194, 190, .5);
+}
+.page-3-info {
+  width: 600px;
+  height: 30em;
+  margin: auto;
+}
+.page-3-info > p {
+  margin: 25px auto;
+  text-align: center;
+}
+.page-3-info > p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 700;
+}
+.page-3-item {
+  position: relative;
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(179, 167, 167, .5);
+  margin-bottom: 48px;
+}
+.page-3-item span:nth-child(2) {
+  position: relative;
+  top: -30px;
+}
+
+
+/* 第四屏 */
+.page-4 {
+  position: relative;
+  height: 100%;
+}
+.page-4 > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  height: 400px;
+  width: 400px;
+}
+.page-4-left {
+  float: left;
+  width: 60%;
+  background: #fff;
+}
+.page-4-decs {
+  text-align: center;
+}
+.page-4-decs > p:nth-child(1){
+  font-weight: 700;
+  font-size: 20px;
+  margin: 30px auto;
+}
+.page-4-right {
+  width: 40%;
+  background: rgba(195, 194, 190, .5);
+}
+.page-4-info > p {
+  width: 80%;
+  font-size: 16px;
+  font-weight: 200;
+  padding: .5em;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #667d99;
+}
+.page-4 .wechat {
+  position: relative;
+}
+.wechat img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 40px;
+  left: -35px;
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+.wechat:hover img {
+  opacity: 1;
+}
+
+
+/* 进度条 */
+.progress {
+  height: 1px;
+  margin: 2px 0;
+  background: #667d99;
+  position: absolute;
+  box-shadow: 0px 0px 10px 1px #667d99;
+}
+.base {
+  width: 80%;
+}
+.base.start  {
+  width: 0;
+  animation: base 2s ease-out 1s;
+  -moz-animation: base 2s ease-out 1s;
+  -webkit-animation: base 2s ease-out 1s;
+}
+.vue {
+  width: 80%;
+}
+.vue.start {
+  width: 0;
+  animation: vue 2s ease-out 1s;
+  -moz-animation: vue 2s ease-out 1s;
+  -webkit-animation: vue 2s ease-out 1s;
+}
+.jquery {
+  width: 70%;
+}
+.jquery.start {
+  width: 0;
+  animation: jquery 2s ease-out 1s;
+  -moz-animation: jquery 2s ease-out 1s;
+  -webkit-animation: jquery 2s ease-out 1s;
+}
+.node {
+  width: 70%;
+}
+.node.start {
+  width: 0;
+  animation: node 2s ease-out 1s;
+  -moz-animation: node 2s ease-out 1s;
+  -webkit-animation: node 2s ease-out 1s;
+}
+.db {
+  width: 70%;
+}
+.db.start{
+  width: 0;
+  animation: db 2s ease-out 1s;
+  -moz-animation: db 2s ease-out 1s;
+  -webkit-animation: db 2s ease-out 1s;
+}
+.tool {
+  width: 60%;
+}
+.tool.start {
+  width: 0;
+  animation: tool 2s ease-out 1s;
+  -moz-animation: tool 2s ease-out 1s;
+  -webkit-animation: tool 2s ease-out 1s;
+}
+.php {
+  width: 60%;
+}
+.php.start {
+  width: 0;
+  animation: php 2s ease-out 1s;
+  -moz-animation: php 2s ease-out 1s;
+  -webkit-animation: php 2s ease-out 1s;
+}
+.other {
+  width: 60%;
+}
+.other.start {
+  width: 0;
+  animation: other 2s ease-out 1s;
+  -moz-animation: other 2s ease-out 1s;
+  -webkit-animation: other 2s ease-out 1s;
+}
+@keyframes base {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes vue {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+@keyframes jquery {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes node {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes db {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 70%;
+  }
+}
+@keyframes tool {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%;
+  }
+}
+@keyframes php {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%;
+  }
+}
+@keyframes other {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 60%;
+  }
+}
